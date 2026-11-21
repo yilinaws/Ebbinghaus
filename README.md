@@ -1,15 +1,1 @@
-[Daily Study Notes (.txt)] ──(git push)──► [GitHub Repository (main)]
-                                                   │
-                                        (Triggers on Push & Daily Cron)
-                                                   ▼
-                                      [GitHub Actions CI/CD Runner]
-                                        ├─ Parses dates & extracts URLs
-                                        └─ Generates static dist/index.html
-                                                   │
-                                        (Auto-Deploys Build Output)
-                                                   ▼
-                                   [GitHub Pages (gh-pages branch)]
-
-## 📌 What You Need to Do
-* Add or update files inside the **`notes/`** folder with today's date (`YYYY-MM-DD.txt`) and paste your links inside.
-* **One file per day.**
+<img width="777" height="307" alt="image" src="https://github.com/user-attachments/assets/ff694e6c-2b11-4d86-b0f5-a59cf492153a" />
