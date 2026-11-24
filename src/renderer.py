@@ -32,9 +32,9 @@ def render_html(today_str, review_items):
     # 左邊維持中文（用來對應 parser.py 的分類），右邊改成你要顯示的英文標題
     sections = [
         ("English_Vocabulary", "🔤 English Vocabulary"),
-        ("English_Sentences", "💬 English Sentences"),
-        ("English_Articles", "📰 English Articles"),
-        ("English_Videos", "🎬 English Videos"),
+        ("English_Sentence", "💬 English Sentence"),
+        ("English_Article", "📰 English Article"),
+        ("English_Video", "🎬 English Video"),
     ]
     sections_html = []
 
