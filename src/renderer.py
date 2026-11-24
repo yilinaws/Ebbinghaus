@@ -31,10 +31,10 @@ def render_html(today_str, review_items):
   else:
     # 左邊維持中文（用來對應 parser.py 的分類），右邊改成你要顯示的英文標題
     sections = [
-        ("English_Vocabulary", "🔤 English Vocabulary"),
-        ("English_Sentence", "💬 English Sentence"),
-        ("English_Article", "📰 English Article"),
-        ("English_Video", "🎬 English Video"),
+        ("English_Vocabulary", "🔤 English_Vocabulary"),
+        ("English_Sentence", "💬 English_Sentence"),
+        ("English_Article", "📰 English_Article"),
+        ("English_Video", "🎬 English_Video"),
     ]
     sections_html = []
 
@@ -42,7 +42,7 @@ def render_html(today_str, review_items):
       cat_items = [
           item
           for item in review_items
-          if item.get("category", "English_Sentences") == cat_key
+          if item.get("category", "English_Sentence") == cat_key
       ]
 
       if not cat_items:
