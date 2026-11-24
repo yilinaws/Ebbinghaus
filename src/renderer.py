@@ -6,12 +6,12 @@ from src.config import OUTPUT_FILE
 def format_item_content(category, content):
   """根據不同分類，把內容排版成最適合閱讀的 HTML"""
   # 1. 英文單字：自動把 @ 前面的單字加粗放大，後面的解釋排在旁邊
-  if category == "英文單字" and "@" in content:
+  if category == "English_Vocabulary" and "@" in content:
     word, meaning = content.split("@", 1)
     return f'<div class="vocab"><strong class="word">{word.strip()}</strong> <span class="meaning">{meaning.strip()}</span></div>'
 
   # 2. 英文文章或影片：精準抓出網址變成可點擊超連結，若有備註也會一併顯示
-  if category in ("英文文章", "英文影片"):
+  if category in ("English_Article", "English_Video"):
     match = re.search(r"(https?://[^\s]+)", content)
     if match:
       url = match.group(1)
@@ -31,10 +31,10 @@ def render_html(today_str, review_items):
   else:
     # 左邊維持中文（用來對應 parser.py 的分類），右邊改成你要顯示的英文標題
     sections = [
-        ("英文單字", "🔤 English Words"),
-        ("英文句子", "💬 English Sentences"),
-        ("英文文章", "📰 English Articles"),
-        ("英文影片", "🎬 English Videos"),
+        ("English Words", "🔤 English Words"),
+        ("English Sentences", "💬 English Sentences"),
+        ("English Articles", "📰 English Articles"),
+        ("English Videos", "🎬 English Videos"),
     ]
     sections_html = []
 
@@ -42,7 +42,7 @@ def render_html(today_str, review_items):
       cat_items = [
           item
           for item in review_items
-          if item.get("category", "英文句子") == cat_key
+          if item.get("category", "English Sentences") == cat_key
       ]
 
       if not cat_items:
