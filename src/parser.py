@@ -19,14 +19,14 @@ def classify_line(line):
     if any(domain in text.lower() for domain in video_domains):
       return "English_Video", ARTICLE_INTERVALS
     else:
-      return "English Article", ARTICLE_INTERVALS
+      return "English_Article", ARTICLE_INTERVALS
 
   # 2. Treat any line containing '@' as an English word
   if "@" in text:
-    return "English Vocabulary", VOCAB_INTERVALS
+    return "English_Vocabulary", VOCAB_INTERVALS
 
   # 3. Classify remaining plain text (without URLs or '@') as English sentences
-  return "English Sentence", VOCAB_INTERVALS
+  return "English_Sentence", VOCAB_INTERVALS
 
 def get_today_reviews():
     today = get_taiwan_today()
